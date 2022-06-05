@@ -1,0 +1,35 @@
+<div class="mein-wrapper">
+<div class="container">
+<% @user.errors.full_messages.each do |message| %>
+    <div class="form-error">
+      <%= message %>
+    </div>
+  <% end %>
+
+    <div class="page-title">
+        <h1>新規登録</h1>
+    </div>
+    <%= form_tag("/users/create") do %>
+        <div class="form">
+            <div class="form-title">お名前<span class="red">(必須)</span></div>
+            <input name="name" type="text" >
+        </div>
+        <div class="form">
+            <div class="form-title">メールアドレス<span class="red">(必須)</span></div>
+            <input name="email" type="text" >
+        </div>
+        <div class="form">
+            <div class="form-title">パスワード<span class="red">(必須)</span></div>
+            <input name="password" type="password">
+        </div>
+        <div class="form">
+            <div class="form-title">パスワード(確認)<span class="red">(必須)</span></div>
+            <input type="password">
+        </div>
+
+        <div class="btn-wrapper">
+            <input type="submit" value="登録する">   
+        </div>
+    <% end %>
+</div>
+</div>
